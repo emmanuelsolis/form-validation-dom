@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 50%;
+        margin: auto;
+      }
+      .estado__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      @media (max-width: 700px) {
+        form {
+          width: 90vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/index.html" method="post" class="form">
+      <label for="nombre" class="input">Nombre del Producto</label>
+      <input type="text" name="nombre" />
+      <label for="precio" class="input">Precio $</label>
+      <input type="text" name="precio" id="precio" />
+      <label for="cantidad" class="input">Cantidad</label>
+      <input type="number" name="cantidad" />
+      <label for="descripcion" class="input">Descripcion</label>
+      <textarea name="descripcion" id="" cols="30" rows="10"></textarea>
+      <label for="categoria" class="input">Categoria</label>
+      <select name="categoria" id="">
+        <option value="pantallas">Pantallas</option>
+        <option value="Celulares">Celulares</option>
+        <option value="laptops">Laptops</option>
+      </select>
+      <label for="estado" class="input">Estado</label>
+      <div class="estado__container">
+        <label for="usado"
+          >Usado
+          <input type="checkbox" name="estado" value="usado" />
+        </label>
+        <label for="nuevo"
+          >Nuevo
+          <input type="checkbox" name="estado" value="nuevo" />
+        </label>
+      </div>
+      <button onclick="validar()">Enviar</button>
+    </form>
+    <script type="text/javascript">
+        /* Verificamos si es un numero   */
+        const numRegx = /^[0-9]+$/;
+        
+        function validar() {
+        let nombre = document.querySelector('input[name="nombre"]').value;
+        let precioInput = document.getElementById("precio");
+        let precioValor = precioInput.value.trim() /* Eliminamos los espacios */
+        let precio = document.querySelector('input[name="precio"]').value;
+        if(!numRegx.test(precioValor)){
+          alert("El precio debe ser un numero")
+        }
+        let cantidad = document.querySelector('input[name="cantidad"]').value;
+        let descripcion = document.querySelector( 'textarea[name="descripcion"]' ).value;
+        let categoria = document.querySelector( 'select[name="categoria"]' ).value;
+        let estado = document.querySelector('input[name="estado"]').value;
+
+        if ( nombre == "" || precio == "" || cantidad == "" || descripcion == "" || categoria == "" || estado == "" ) { 
+            alert("Todos los campos son obligatorios");
+        } else {
+            alert("Datos enviados correctamente");
+        }
+      }
+    </script>
+       
+  </body>
+</html>
