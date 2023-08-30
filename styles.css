@@ -1,0 +1,25 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 50%;
+    margin: 100px auto;
+  }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .estado, .categoria {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: first baseline;
+    gap: 0.5rem;
+  }
+  @media (max-width: 700px) {
+    form {
+      width: 90vw;
+    }
+  }
