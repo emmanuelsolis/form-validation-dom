@@ -37,6 +37,11 @@ const validarCampos = (idFormulario) => {
         setTimeout(() => {
           elemento.style.setProperty("border", "");
         }, 2000);
+      }else {
+         elemento.style.setProperty("border", "1px solid green");
+         setTimeout(() => {
+            elemento.style.setProperty("border", "");
+         }, 2000);
       }
 
       if (tipoElemento === "checkbox" && !elemento.checked) {
@@ -45,6 +50,11 @@ const validarCampos = (idFormulario) => {
         setTimeout(() => {
           elemento.style.setProperty("outline", "");
         }, 2000);
+      }else {
+         elemento.style.setProperty("outline", "1px solid green");
+         setTimeout(() => {
+            elemento.style.setProperty("outline", "");
+         }, 2000);
       }
     });
   }
@@ -54,13 +64,9 @@ const validarCampos = (idFormulario) => {
 const enviarFormulario = () => {
   event.preventDefault();
   if (!validarCampos('formValidacion')) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Algo salió mal !",
-      footer: "<h3>Verifique que no falte algún campo</h3>",
-    });
-    return;
+     setTimeout (() => {
+         alert("Todos los campos son obligatorios");
+       }, 1000);
   } else {
     alert("Datos enviados correctamente");
   }
