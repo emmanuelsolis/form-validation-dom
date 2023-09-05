@@ -1,9 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+html {
+  font-family: Poppins;
+  box-sizing: border-box;
+}
+body h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  padding: 5%;
+  margin-top: 5% auto 20px;
+}
 form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     width: 50%;
-    margin: 100px auto;
+    margin:  auto;
   }
   .form-field {
     display: flex;

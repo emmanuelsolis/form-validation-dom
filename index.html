@@ -4,49 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <style>
-      
-    </style>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style></style>
   </head>
   <body>
-    <form action="/index.html" name="formValidacion" id="formValidacion" method="post" class="form" onsubmit="enviarFormulario()">
-        <div class="form-field">
-            <label for="nombre" class="input" >Nombre del Producto</label>
-            <input type="text" name="nombre" id="nombre" data-validate/>
-        </div>
-        <div class="form-field">
-            <label for="precio" class="input">Precio $</label>
-            <input type="text" name="precio" id="precio" data-validate />
-        </div>      
-        <div class="form-field">
-            <label for="cantidad" class="input">Cantidad</label>
-            <input type="number" name="cantidad" id="cantidad" data-validate/>
-        </div>
-        <div class="form-field descripcion">
-            <label for="descripcion" class="input">Descripcion</label>
-            <textarea name="descripcion" id="descripcion" rows="10" data-validate ></textarea>
-        </div>
-        <div class="form-field categoria">
-            <p>Categoria</p>
-            <select name="categoria" id="categoria">
-              <option value="pantallas">Pantallas</option>
-              <option value="Celulares">Celulares</option>
-              <option value="laptops">Laptops</option>
-            </select>
-        </div>
-        <div class="form-field estado">
-            <p >Estado</p>
-          <label for="usado">Usado </label>
-            <input type="checkbox" name="estado" id="usado" value="usado" />
-          <labe for="nuevo">Nuevo </labe>
-            <input type="checkbox" name="estado" value="nuevo" id="nuevo" />
-        </div>
+    <h2>Introduce los datos de tu producto</h2>
+    <form
+      action="/pages/galeria.html"
+      name="formValidacion"
+      id="formValidacion"
+      class="form"
+      onsubmit="enviarFormulario()"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <div class="form-field">
+        <label for="imagen" class="input">Imagen</label>
+        <input type="file" name="imagen" id="imagen" data-validate />
+      </div>
+      <div class="form-field">
+        <label for="nombre" class="input">Nombre del Producto</label>
+        <input type="text" name="nombre" id="nombre" data-validate />
+      </div>
+      <div class="form-field">
+        <label for="precio" class="input">Precio $</label>
+        <input type="text" name="precio" id="precio" data-validate />
+      </div>
+      <div class="form-field">
+        <label for="cantidad" class="input">Cantidad</label>
+        <input type="number" name="cantidad" id="cantidad" data-validate />
+      </div>
+      <div class="form-field descripcion">
+        <label for="descripcion" class="input">Descripcion</label>
+        <textarea name="descripcion" id="descripcion" rows="10" data-validate ></textarea>
+      </div>
+      <div class="form-field categoria">
+        <label for="categoria" class="input">Categoria</label>
+        <select name="categoria" id="categoria">
+          <option value="pantallas">Pantallas</option>
+          <option value="Celulares">Celulares</option>
+          <option value="laptops">Laptops</option>
+        </select>
+      </div>
+      <div class="form-field estado">
+        <p>Estado:</p>
+        <label for="usado">Usado </label>
+        <input type="checkbox" name="estado" id="usado" value="usado" />
+        <labe for="nuevo">Nuevo </labe>
+        <input type="checkbox" name="estado" value="nuevo" id="nuevo" />
+      </div>
 
-      <button onclick="validar()" type="submit">Enviar</button>
+      <button onclick="validarCampos()" type="submit">Enviar</button>
     </form>
-    <script type="text/javascript" src="./index.js"></script>
-       
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script src="./js/index_dom.js" type="module" ></script>
   </body>
 </html>
