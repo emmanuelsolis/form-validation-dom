@@ -17,7 +17,6 @@ h2 {
     padding: 1em 1em;
 }
 .product_container {
-    width: 25%;
     max-width: 300px;
     margin: 0 auto;
     background: lightgray;
@@ -30,13 +29,38 @@ h2 {
     object-fit: cover !important;
     border-radius: 15px;
 }
-button#abrir-modal{
+button#abrir-modal {
     padding: 0.5em 2em;
     border-radius: 20px;
     background-color: orange;
     border: none;
+    max-width: 200px;
 }
+button#cerrar-modal{
+    margin: 20px ;
+    align-self: flex-end;
+}
+button#cerrar-modal .bx {
+    font-size: 2em;
+    color: #000;
+    background-color: #fff;
+}
+
 .bx {
    font-family: Poppins;
    font-weight: 700;
+}
+#contenido_form{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    position: absolute;
+    background: #fff;
+    top: 0;
+}
+#contenido_form::before{
+    
+    margin: auto;
 }

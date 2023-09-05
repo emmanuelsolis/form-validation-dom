@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/galeria.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Lista de Productos</title>
   </head>
   <body>
@@ -31,9 +33,23 @@
           </div>
         </article>
       </div>
+      <div id="contenido_form"></div>
       <button id="abrir-modal">
         <strong> <i class="bx bx-plus"></i>Añadir producto </strong>
       </button>
     </main>
+
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: "../index.html",
+          type: "GET",
+          dataType: "html",
+          success: function (data) {
+            $("#contenido_form").html(data);
+          },
+        });
+      });
+    </script>
   </body>
 </html>
